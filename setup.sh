@@ -1,32 +1,38 @@
 #!/bin/bash
 
-# 1. जरूरी प्रीमियम टूल्स
+# --- मसूद का ULTIMATE VIP SETUP (2026 Edition) ---
+
+# 1. पुराने टूल्स को अपडेट करना
+echo "Installing Ultra-VIP Assets..." | lolcat
 pkg update && pkg upgrade -y
 pkg install figlet cmatrix ruby git -y
 gem install lolcat
 
-# 2. .bashrc का मास्टर कॉन्फ़िगरेशन
+# 2. .bashrc को नए सिरे से लिखना (पुरानी सारी सेटिंग्स डिलीट हो जाएंगी)
 cat <<'EOF' > ~/.bashrc
 clear
 
-# चमकता हुआ (Glow) एनीमेटेड बैनर
+# चमकता हुआ एनिमेटेड बैनर (Glow Effect)
 echo "------------------------------------------------" | lolcat
 figlet -f slant "MASUD VIP" | lolcat -a -d 1
 echo "------------------------------------------------" | lolcat
-echo "  [+] SYSTEM STATUS: SECURE" | lolcat
-echo "  [+] USER: MASUD (ELITE DEVELOPER)" | lolcat
+echo "  [●] STATUS: ELITE DEVELOPER MODE ACTIVE" | lolcat
+echo "  [●] OWNER: MASUD (VIP USER)" | lolcat
 echo "------------------------------------------------" | lolcat
 
-# $ की जगह अल्ट्रा स्टाइलिश प्रॉम्प्ट (Neon Colors)
+# $ की जगह डबल लाइन वाला प्रीमियम प्रॉम्प्ट
 export PS1='\[\e[1;32m\]┌──(\[\e[1;33m\]⚡MASUD\[\e[1;32m\])-[\[\e[1;37m\]@VIP-SYSTEM\[\e[1;32m\]]\n\[\e[1;32m\]└─\[\e[1;31m\]>> \[\e[0m\]'
 
-# नंबर गिरने वाला जादू (Hacker Matrix) - ऑटोमैटिक 3 सेकंड बाद बंद होगा
-# -u 10 (तेजी से गिरेगा), -C cyan (बेहतरीन कलर)
-(sleep 1 && timeout 4 cmatrix -a -b -u 10 -C cyan)
+# नंबर गिरने वाला जादू (Automatic Hacker Matrix)
+# यह 3 सेकंड तक चलेगा और अपने आप बंद हो जाएगा
+(timeout 3 cmatrix -a -b -u 10 -C cyan)
 EOF
 
-# 3. परमिशन और फिनिशिंग
+# 3. परमिशन सेट करना
 chmod +x ~/.bashrc
+
 clear
-echo "मसूद भाई, अब आपका टर्मक्स 'ELITE VIP' बन चुका है!" | lolcat -a -d 10
-echo "बस 'source ~/.bashrc' टाइप करें या टर्मक्स रीस्टार्ट करें।" | lolcat
+echo "------------------------------------------------" | lolcat
+echo "CONGRATULATIONS MASUD! VIP SETUP COMPLETE." | lolcat
+echo "Please type: source ~/.bashrc" | lolcat
+echo "------------------------------------------------" | lolcat
