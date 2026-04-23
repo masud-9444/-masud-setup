@@ -1,38 +1,27 @@
 #!/bin/bash
 
-# --- मसूद का ULTIMATE VIP SETUP (2026 Edition) ---
-
-# 1. पुराने टूल्स को अपडेट करना
-echo "Installing Ultra-VIP Assets..." | lolcat
+# 1. जरूरी टूल्स
 pkg update && pkg upgrade -y
 pkg install figlet cmatrix ruby git -y
 gem install lolcat
 
-# 2. .bashrc को नए सिरे से लिखना (पुरानी सारी सेटिंग्स डिलीट हो जाएंगी)
+# 2. .bashrc सेटअप (Sober and Powerful)
 cat <<'EOF' > ~/.bashrc
 clear
 
-# चमकता हुआ एनिमेटेड बैनर (Glow Effect)
-echo "------------------------------------------------" | lolcat
-figlet -f slant "MASUD VIP" | lolcat -a -d 1
-echo "------------------------------------------------" | lolcat
-echo "  [●] STATUS: ELITE DEVELOPER MODE ACTIVE" | lolcat
-echo "  [●] OWNER: MASUD (VIP USER)" | lolcat
-echo "------------------------------------------------" | lolcat
+# सिंपल और क्लासी बैनर
+figlet -f small "MASUD" | lolcat
+echo "────────────────────────────────────────────────" | lolcat
+echo "  LOGGED AS: MASUD | IP: HIDDEN | MODE: ELITE " 
+echo "────────────────────────────────────────────────" | lolcat
 
-# $ की जगह डबल लाइन वाला प्रीमियम प्रॉम्प्ट
-export PS1='\[\e[1;32m\]┌──(\[\e[1;33m\]⚡MASUD\[\e[1;32m\])-[\[\e[1;37m\]@VIP-SYSTEM\[\e[1;32m\]]\n\[\e[1;32m\]└─\[\e[1;31m\]>> \[\e[0m\]'
+# अब तक का सबसे बेहतरीन और प्रोफेशनल प्रॉम्प्ट (Minimalist)
+export PS1='\[\e[1;31m\][\[\e[1;37m\]MASUD\[\e[1;31m\]]\[\e[1;32m\] \w \[\e[1;31m\]# \[\e[0m\]'
 
-# नंबर गिरने वाला जादू (Automatic Hacker Matrix)
-# यह 3 सेकंड तक चलेगा और अपने आप बंद हो जाएगा
-(timeout 3 cmatrix -a -b -u 10 -C cyan)
+# बैकग्राउंड में हल्का सा मैट्रिक्स इफ़ेक्ट (सिर्फ 2 सेकंड)
+(timeout 2 cmatrix -a -b -C green)
 EOF
 
-# 3. परमिशन सेट करना
 chmod +x ~/.bashrc
-
 clear
-echo "------------------------------------------------" | lolcat
-echo "CONGRATULATIONS MASUD! VIP SETUP COMPLETE." | lolcat
-echo "Please type: source ~/.bashrc" | lolcat
-echo "------------------------------------------------" | lolcat
+echo "Done! मसूद भाई, अब चेक करें। यह वाला एकदम सॉलिड है।" | lolcat
