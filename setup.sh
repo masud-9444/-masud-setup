@@ -1,33 +1,32 @@
 #!/bin/bash
 
-# 1. पुराने कचरे को साफ करना और टूल्स इंस्टॉल करना
+# 1. जरूरी प्रीमियम टूल्स
 pkg update && pkg upgrade -y
 pkg install figlet cmatrix ruby git -y
 gem install lolcat
 
-# 2. .bashrc फाइल को नए सिरे से बनाना
-# यहाँ हम पुरानी फाइल को पूरी तरह डिलीट करके नई फाइल लिख रहे हैं
+# 2. .bashrc का मास्टर कॉन्फ़िगरेशन
 cat <<'EOF' > ~/.bashrc
 clear
 
-# स्टाइलिश बैनर
-figlet -f slant "MASUD" | lolcat
-echo "=======================================" | lolcat
-echo "   WELCOME MASUD | DEVELOPER MODE ON   " | lolcat
-echo "=======================================" | lolcat
+# चमकता हुआ (Glow) एनीमेटेड बैनर
+echo "------------------------------------------------" | lolcat
+figlet -f slant "MASUD VIP" | lolcat -a -d 1
+echo "------------------------------------------------" | lolcat
+echo "  [+] SYSTEM STATUS: SECURE" | lolcat
+echo "  [+] USER: MASUD (ELITE DEVELOPER)" | lolcat
+echo "------------------------------------------------" | lolcat
 
-# यही वो खास लाइन है जो $ को हटाकर ⚡MASUD सेट करेगी
-export PS1='\[\e[1;33m\]⚡MASUD\[\e[1;36m\] @SYSTEM \[\e[1;31m\]>> \[\e[0m\]'
+# $ की जगह अल्ट्रा स्टाइलिश प्रॉम्प्ट (Neon Colors)
+export PS1='\[\e[1;32m\]┌──(\[\e[1;33m\]⚡MASUD\[\e[1;32m\])-[\[\e[1;37m\]@VIP-SYSTEM\[\e[1;32m\]]\n\[\e[1;32m\]└─\[\e[1;31m\]>> \[\e[0m\]'
 
-# 2 सेकंड का गैप और मैट्रिक्स जादू
-sleep 2
-cmatrix -a -s -C red
+# नंबर गिरने वाला जादू (Hacker Matrix) - ऑटोमैटिक 3 सेकंड बाद बंद होगा
+# -u 10 (तेजी से गिरेगा), -C cyan (बेहतरीन कलर)
+(sleep 1 && timeout 4 cmatrix -a -b -u 10 -C cyan)
 EOF
 
-# 3. परमिशन देना
+# 3. परमिशन और फिनिशिंग
 chmod +x ~/.bashrc
-
 clear
-echo "------------------------------------------------" | lolcat
-echo "सेटअप पूरा! मसूद भाई, अब बस Termux को EXIT करके खोलें।" | lolcat
-echo "------------------------------------------------" | lolcat
+echo "मसूद भाई, अब आपका टर्मक्स 'ELITE VIP' बन चुका है!" | lolcat -a -d 10
+echo "बस 'source ~/.bashrc' टाइप करें या टर्मक्स रीस्टार्ट करें।" | lolcat
